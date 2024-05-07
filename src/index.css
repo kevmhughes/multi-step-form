@@ -1,18 +1,111 @@
-#root {
+@font-face {
+  font-family:"ubuntu-regular" ;
+  src: url("./assets/fonts/Ubuntu-Regular.ttf");
+}
 
+#root {
+  height: 100vh;
+  width: 100vw;
+  background-color: #eef5ff;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  font-family: "ubuntu-regular";
 }
 .main-container {
   display: flex;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 780px;
+}
+/* PersonalInfo.Jsx */
+.personal-info-container {
+  display: flex;
+  flex-direction: column;
+}
+.personal-info-form {
+  display: flex;
+  flex-direction: column;
+}
+.left-side-image {
+  background-image: url(./assets/images/bg-sidebar-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 568px;
+  width: 274px;
+}
+.left-side-image-info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-left: 40px;
+  padding-top: 40px;
+}
+.left-side-image-step-number {
+  border: 1px solid white;
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+}
+.selected-page-number {
+  border: 1px solid #bee1ff;
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  background-color: #bee1ff;
+  color: #000a31;
+}
+.left-side-image-step-number-container {
+  display: flex;
+  gap: 10px;
+  color: #fefff5;
+}
+.left-side-image-number-positioner {
+  position: relative;
+  top: 6px;
+  right: -11px;
+}
+.right-side-container {
+  margin-left: 100px;
+  margin-top: 20px;
+}
+h1 {
+  margin-bottom: 10px;
+}
+.subtitle {
+  margin-bottom: 40px;
+}
+#name,
+#email,
+#phone {
+  height: 40px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 0.2px solid lightgrey;
+  margin-top: 5px;
+}
+.button-positioner {
+  top: 105px;
+  position: relative;
+  right: -308px;
+}
+.next-step-button {
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  border: 1px solid #164a8b;
+  background-color: #164a8b;
+  color: white;
 }
 
-/* PersonalInfo.Jsx */
-.personal-info-container{
-  display: flex;
-  flex-direction: column;
-}
-.personal-info-form{
-  display: flex;
-  flex-direction: column;
+/* SelectPlan.Jsx */
+.button-positioner-page-two {
+  top: 25px;
+  position: relative;
+  right: -308px;
 }
 
 /* SWITCH BELOW
@@ -41,8 +134,8 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -53,16 +146,16 @@
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {

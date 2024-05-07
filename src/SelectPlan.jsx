@@ -28,7 +28,7 @@ const handleSelectPlan = (e) => {
   return (
     <div className="right-side-container">
       <h1>Select your plan</h1>
-      <div>You have the option of monthly or yearly billing.</div>
+      <div className="subtitle">You have the option of monthly or yearly billing.</div>
       <div className="options-container">
         {(billType) ? 
         <div className="arcade plan-selector" onClick={handleSelectPlan} id="arcade">
@@ -60,7 +60,9 @@ const handleSelectPlan = (e) => {
       <SwitchComponent/>
       <div>
         <div onClick={handleGoBack}>Go back</div>
-        <button onClick={handleSubmit}>Next Step</button>
+        <div className="button-positioner-page-two">
+          <button onClick={handleSubmit} className="next-step-button">Next Step</button>
+        </div>
       </div>
     </div>
   );

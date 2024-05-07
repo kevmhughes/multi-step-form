@@ -2,18 +2,19 @@ import React, { useContext, useEffect } from "react";
 import { AppContext } from "./App";
 
 const PersonalInfo = () => {
-
   const { state, handleChange, handleSubmit } = useContext(AppContext);
 
   useEffect(() => {
     // storing data
     localStorage.setItem("storedData", JSON.stringify(state));
   }, [state]);
- 
+
   return (
     <div className="right-side-container">
       <h1>Personal Info</h1>
-      <div>Please provide your name, email address, and phone number.</div>
+      <div className="subtitle">
+        Please provide your name, email address, and phone number.
+      </div>
       <form onSubmit={handleSubmit} className="personal-info-form">
         <label htmlFor="name">Name</label>
         <input
@@ -49,8 +50,9 @@ const PersonalInfo = () => {
           onChange={handleChange}
           required
         />
-
-        <button type="submit">Next Step</button>
+        <div className="button-positioner">
+          <button type="submit" className="next-step-button">Next Step</button>
+        </div>
       </form>
     </div>
   );

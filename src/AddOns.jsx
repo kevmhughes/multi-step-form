@@ -8,7 +8,7 @@ const AddOns = () => {
   return (
     <div className="right-side-container">
       <h1>Pick add-ons </h1>
-      <div>Add-ons help enhance your gaming experience</div>
+      <div className="subtitle">Add-ons help enhance your gaming experience</div>
       <div>
         <div>first checkbox</div>
         <div>second checkbox</div>
