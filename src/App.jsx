@@ -16,10 +16,14 @@ function App() {
       email: "",
       phone: "",
       billingType: "monthly",
-      planId: "arcade",
-      test: ""
+      planType: "arcade",
+      paymentPlan: "",
+      addOn1: "",
+      addOn2: "",
+      addOn3: "",
     }
   );
+  console.log(state)
   const [page, setPage] = useState(1);
 
   // handle personal info form (onChange)
@@ -43,7 +47,7 @@ function App() {
     setPage(page + 1);
   };
 
-  // hnadle going back one page (onSubmit)
+  // handle going back one page (onSubmit)
   const handleGoBack = () => {
     setPage(page - 1)
   }

@@ -1,5 +1,5 @@
 @font-face {
-  font-family:"ubuntu-regular" ;
+  font-family: "ubuntu-regular";
   src: url("./assets/fonts/Ubuntu-Regular.ttf");
 }
 
@@ -70,6 +70,10 @@
 .right-side-container {
   margin-left: 80px;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 500px;
 }
 h1 {
   margin-bottom: 10px;
@@ -87,11 +91,6 @@ h1 {
   border: 0.2px solid lightgrey;
   margin-top: 5px;
 }
-.button-positioner {
-  top: 105px;
-  position: relative;
-  right: -308px;
-}
 .next-step-button {
   height: 40px;
   width: 100px;
@@ -100,12 +99,36 @@ h1 {
   background-color: #164a8b;
   color: white;
 }
+.personal-info-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
 
 /* SelectPlan.Jsx */
-.button-positioner-page-two {
-  top: 25px;
-  position: relative;
-  right: -308px;
+
+.options-container {
+  display: flex;
+  gap: 20px;
+}
+
+/* AddOns.Jsx */
+.individual-add-ons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.checkbox-add-on-type-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* SWITCH BELOW

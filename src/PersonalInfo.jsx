@@ -50,7 +50,7 @@ const PersonalInfo = () => {
           onChange={handleChange}
           required
         />
-        <div className="button-positioner">
+        <div className="personal-info-button-container">
           <button type="submit" className="next-step-button">Next Step</button>
         </div>
       </form>

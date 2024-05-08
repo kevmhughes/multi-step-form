@@ -8,8 +8,8 @@ const SelectPlan = () => {
 
   useEffect(() => {
     // storing data
-    const planId = state.planId 
-    state.test = document.querySelector(`#${planId}`).textContent 
+    const planType = state.planType
+    state.paymentPlan = document.querySelector(`#${planType}`).textContent 
     localStorage.setItem("storedData", JSON.stringify(state));
   }, [state]);
   
@@ -18,7 +18,7 @@ const handleSelectPlan = (e) => {
     /* const value = document.querySelector(`#${id}`).textContent */
     setState({
       ...state,
-      "planId": id
+      "planType": id
     }) 
   } 
 
@@ -58,12 +58,10 @@ const handleSelectPlan = (e) => {
         
       </div>
       <SwitchComponent/>
-      <div>
+        <div className="buttons-container">
         <div onClick={handleGoBack}>Go back</div>
-        <div className="button-positioner-page-two">
           <button onClick={handleSubmit} className="next-step-button">Next Step</button>
         </div>
-      </div>
     </div>
   );
 };
