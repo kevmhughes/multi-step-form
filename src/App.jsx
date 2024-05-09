@@ -5,6 +5,7 @@ import SelectPlan from "./SelectPlan";
 import AddOns from "./AddOns";
 import FinishingUp from "./FinishingUp";
 import { useState, createContext } from "react";
+import Confirmation from "./Confirmation";
 
 export const AppContext = createContext();
 
@@ -64,6 +65,7 @@ function App() {
             {page == 2 && <SelectPlan />}
             {page == 3 && <AddOns />}
             {page == 4 && <FinishingUp />}
+            {page == 5 && <Confirmation />}
           </div>
       </AppContext.Provider>
     </>

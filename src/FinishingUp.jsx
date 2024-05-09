@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { AppContext } from "./App";
 
 const FinishingUp = () => {
-  const { handleGoBack, state} =
+  const { handleGoBack, state, handleSubmit} =
     useContext(AppContext);
 
   const planType = state.planType;
@@ -63,7 +63,7 @@ const FinishingUp = () => {
         </div>
       <div className="buttons-container">
         <div onClick={handleGoBack}>Go back</div>
-        <button type="submit" className="next-step-button">
+        <button type="submit" className="next-step-button" onClick={handleSubmit}>
           Confirm
         </button>
       </div>
