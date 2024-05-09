@@ -2,19 +2,20 @@ import React, { useContext, useEffect } from "react";
 import { AppContext } from "./App";
 
 const FinishingUp = () => {
-  const { handleGoBack, state, handleSubmit} =
+  const { handleGoBack, formData, handleSubmit} =
     useContext(AppContext);
 
-  const planType = state.planType;
-  const billType = state.billingType == "monthly";
-  const addOn1 = state.addOn1;
-  const addOn2 = state.addOn2;
-  const addOn3 = state.addOn3;
-  const subTotal = state.paymentPlan.split(" ")[1]
+  const planType = formData.planType;
+  const billType = formData.billingType == "monthly";
+  const addOn1 = formData.addOn1;
+  const addOn2 = formData.addOn2;
+  const addOn3 = formData.addOn3;
+  const subTotal = formData.paymentPlan.split(" ")[1]
   console.log(subTotal.slice(1,subTotal.length-3))
 
 
-  const total = parseInt(subTotal.slice(1,subTotal.length-3)) + (state.addOn1.length > 0 ? parseInt(state.addOn1.split(" ")[1]): 0 ) + (state.addOn2.length > 0 ? parseInt(state.addOn2.split(" ")[1]): 0 ) + (state.addOn3.length > 0 ? parseInt(state.addOn3.split(" ")[1]): 0 )
+  const total = parseInt(subTotal.slice(1,subTotal.length-3)) + (formData.addOn1.length > 0 ? parseInt(formData.addOn1.split(" ")[1]): 0 ) + (formData.addOn2.length > 0 ? parseInt(formData.addOn2.split(" ")[1]): 0 ) + (formData.addOn3.length > 0 ? parseInt(formData.addOn3.split(" ")[1]): 0 )
+  
   return (
     <div className="right-side-container">
       <div>

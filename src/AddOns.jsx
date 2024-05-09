@@ -2,37 +2,37 @@ import React, { useContext, useEffect } from "react";
 import { AppContext } from "./App";
 
 const AddOns = () => {
-  const { handleGoBack, handleSubmit, state, setState } =
+  const { handleGoBack, handleSubmit, formData, setFormData } =
     useContext(AppContext);
 
   useEffect(() => {
     // storing data
 
-    if (state.addOn1.length > 0) {
+    if (formData.addOn1.length > 0) {
       document.querySelector("#online-service").checked = true;
     }
-    if (state.addOn2.length > 0) {
+    if (formData.addOn2.length > 0) {
       document.querySelector("#larger-storage").checked = true;
     }
-    if (state.addOn3.length > 0) {
+    if (formData.addOn3.length > 0) {
       document.querySelector("#customizable-profile").checked = true;
     }
-    localStorage.setItem("storedData", JSON.stringify(state));
-  }, [state]);
+    localStorage.setItem("storedData", JSON.stringify(formData));
+  }, [formData]);
 
 
-const billType = state.billingType == "monthly";
+const billType = formData.billingType == "monthly";
 
 const handleCheckBox = (e) => {
     if (e.target.checked) {
-      setState({
-        ...state,
+      setFormData({
+        ...formData,
         "addOn1":
           e.target.id + " " + document.querySelector(".online-service-info").textContent.split("/")[0].slice(2)
       });
     } else if (e.target.checked == false) {
-      setState({
-        ...state,
+      setFormData({
+        ...formData,
         "addOn1": "",
       });
     }
@@ -40,14 +40,14 @@ const handleCheckBox = (e) => {
 
   const handleCheckBox2 = (e) => {
     if (e.target.checked) {
-      setState({
-        ...state,
+      setFormData({
+        ...formData,
         "addOn2":
         e.target.id + " " + document.querySelector(".larger-storage-info").textContent.split("/")[0].slice(2)
       });
     } else if (e.target.checked == false) {
-      setState({
-        ...state,
+      setFormData({
+        ...formData,
         addOn2: "",
       });
     }
@@ -55,13 +55,13 @@ const handleCheckBox = (e) => {
 
   const handleCheckBox3 = (e) => {
     if (e.target.checked) {
-      setState({
-        ...state,
+      setFormData({
+        ...formData,
         "addOn3": e.target.id + " " + document.querySelector(".customizable-profile-info").textContent.split("/")[0].slice(2)
       });
     } else if (e.target.checked == false) {
-      setState({
-        ...state,
+      setFormData({
+        ...formData,
         "addOn3": "",
       });
     }

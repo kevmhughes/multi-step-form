@@ -195,3 +195,17 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/* Confirmation.Jsx */
+
+.final-right-side-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.confirmation-message {
+  width: 422px;
+  text-align: center;
+}

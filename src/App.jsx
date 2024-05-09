@@ -10,7 +10,7 @@ import Confirmation from "./Confirmation";
 export const AppContext = createContext();
 
 function App() {
-  const [state, setState] = useState(
+  const [formData, setFormData] = useState(
     // get local storage/set the state
     JSON.parse(localStorage.getItem("storedData")) || {
       name: "",
@@ -24,15 +24,16 @@ function App() {
       addOn3: "",
     }
   );
-  /* console.log(state) */
+  console.log(formData)
   const [page, setPage] = useState(1);
+  console.log(page, "hey")
 
   // handle personal info form (onChange)
   const handleChange = (e) => {
     e.preventDefault();
     const value = e.target.value;
-    setState({
-      ...state,
+    setFormData({
+      ...formData,
       [e.target.name]: value,
     });
   };
@@ -41,23 +42,25 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const value = e.target.value;
-    setState({
-      ...state,
+    setFormData({
+      ...formData,
       [e.target.name]: value,
     });
     setPage(page + 1);
+    console.log("pageBBB", page)
   };
 
   // handle going back one page (onSubmit)
   const handleGoBack = () => {
     setPage(page - 1)
+    console.log("pageCCC", page)
   }
 
 
   return (
     <>
       <AppContext.Provider
-        value={{ page, setPage, state, setState, handleChange, handleSubmit, handleGoBack}}
+        value={{ page, setPage, formData, setFormData, handleChange, handleSubmit, handleGoBack}}
       >
           <div className="main-container">
             <SideBar />

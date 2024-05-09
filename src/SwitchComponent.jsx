@@ -3,17 +3,17 @@ import { AppContext } from "./App";
 
 const SwitchComponent = () => {
 
-const { billingType, setState, state } = useContext(AppContext);
+const { billingType, setFormData, formData } = useContext(AppContext);
 
 useEffect(() => {
   // storing data
-  localStorage.setItem("storedData", JSON.stringify(state));
-}, [state]);
+  localStorage.setItem("storedData", JSON.stringify(formData));
+}, [formData]);
 
 const handleSwitch = (e) => {
   const value = e.target.checked ? "yearly" : "monthly"
-  setState({
-    ...state,
+  setFormData({
+    ...formData,
     "billingType": value,
     "addOn1": "",
     "addOn2": "",
@@ -25,7 +25,7 @@ const handleSwitch = (e) => {
     <div>
       <form>
       <label className="switch">
-  <input type="checkbox" onChange={handleSwitch} id="switch" checked={state.billingType == "monthly" ? false : true}/>
+  <input type="checkbox" onChange={handleSwitch} id="switch" checked={formData.billingType == "monthly" ? false : true}/>
   <span className="slider round"></span>
 </label>
       </form>

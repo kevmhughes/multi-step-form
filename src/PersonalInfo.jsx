@@ -2,12 +2,12 @@ import React, { useContext, useEffect } from "react";
 import { AppContext } from "./App";
 
 const PersonalInfo = () => {
-  const { state, handleChange, handleSubmit } = useContext(AppContext);
+  const { formData, handleChange, handleSubmit } = useContext(AppContext);
 
   useEffect(() => {
     // storing data to local 
-    localStorage.setItem("storedData", JSON.stringify(state));
-  }, [state]);
+    localStorage.setItem("storedData", JSON.stringify(formData));
+  }, [formData]);
 
   return (
     <div className="right-side-container">
@@ -22,7 +22,7 @@ const PersonalInfo = () => {
           placeholder="e.g. Stephen King"
           name="name"
           id="name"
-          value={state.name}
+          value={formData.name}
           onChange={handleChange}
           required
         />
@@ -33,7 +33,7 @@ const PersonalInfo = () => {
           placeholder="e.g. stephenking@lorem.com"
           name="email"
           id="email"
-          value={state.email}
+          value={formData.email}
           onChange={handleChange}
           required
         />
@@ -46,7 +46,7 @@ const PersonalInfo = () => {
           id="phone"
           minLength="11"
           maxLength="15"
-          value={state.phone}
+          value={formData.phone}
           onChange={handleChange}
           required
         />

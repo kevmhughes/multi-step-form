@@ -4,25 +4,25 @@ import SwitchComponent from "./SwitchComponent";
 
 const SelectPlan = () => {
 
-  const { handleSubmit, handleGoBack, setState, state } = useContext(AppContext);
+  const { handleSubmit, handleGoBack, setFormData, formData } = useContext(AppContext);
 
   useEffect(() => {
     // storing data
-    const planType = state.planType
-    state.paymentPlan = document.querySelector(`#${planType}`).textContent 
-    localStorage.setItem("storedData", JSON.stringify(state));
-  }, [state]);
+    const planType = formData.planType
+    formData.paymentPlan = document.querySelector(`#${planType}`).textContent 
+    localStorage.setItem("storedData", JSON.stringify(formData));
+  }, [formData]);
   
 const handleSelectPlan = (e) => {
     const id = e.target.id
 
-    setState({
-      ...state,
+    setFormData({
+      ...formData,
       "planType": id,
     }) 
   } 
 
-  const billType = state.billingType == "monthly"
+  const billType = formData.billingType == "monthly"
 
   
   return (
