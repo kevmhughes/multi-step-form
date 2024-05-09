@@ -5,7 +5,7 @@ const PersonalInfo = () => {
   const { state, handleChange, handleSubmit } = useContext(AppContext);
 
   useEffect(() => {
-    // storing data
+    // storing data to local 
     localStorage.setItem("storedData", JSON.stringify(state));
   }, [state]);
 

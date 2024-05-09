@@ -8,43 +8,47 @@ const AddOns = () => {
   useEffect(() => {
     // storing data
 
-/*    if (state.addon1.length > 0) {
+    if (state.addOn1.length > 0) {
       document.querySelector("#online-service").checked = true;
-    } 
-    if (state.addon2.length > 0) {
+    }
+    if (state.addOn2.length > 0) {
       document.querySelector("#larger-storage").checked = true;
     }
-    if (state.addon3.length > 0) {
+    if (state.addOn3.length > 0) {
       document.querySelector("#customizable-profile").checked = true;
-    }  */
-    
+    }
     localStorage.setItem("storedData", JSON.stringify(state));
   }, [state]);
 
-  const handleCheckBox = (e) => {
+
+const billType = state.billingType == "monthly";
+
+const handleCheckBox = (e) => {
     if (e.target.checked) {
       setState({
         ...state,
-        addon1: e.target.id,
+        "addOn1":
+          e.target.id + " " + document.querySelector(".online-service-info").textContent.split("/")[0].slice(2)
       });
     } else if (e.target.checked == false) {
       setState({
         ...state,
-        addon1: "",
+        "addOn1": "",
       });
     }
-  };
+  }; 
 
   const handleCheckBox2 = (e) => {
     if (e.target.checked) {
       setState({
         ...state,
-        addon2: e.target.id,
+        "addOn2":
+        e.target.id + " " + document.querySelector(".larger-storage-info").textContent.split("/")[0].slice(2)
       });
     } else if (e.target.checked == false) {
       setState({
         ...state,
-        addon2: "",
+        addOn2: "",
       });
     }
   };
@@ -53,17 +57,15 @@ const AddOns = () => {
     if (e.target.checked) {
       setState({
         ...state,
-        addon3: e.target.id,
+        "addOn3": e.target.id + " " + document.querySelector(".customizable-profile-info").textContent.split("/")[0].slice(2)
       });
     } else if (e.target.checked == false) {
       setState({
         ...state,
-        addon3: "",
+        "addOn3": "",
       });
     }
   };
-
-  const billType = state.billingType == "monthly";
 
   return (
     <div className="right-side-container">
@@ -86,8 +88,11 @@ const AddOns = () => {
                 <div>Access to multiplayer games</div>
               </div>
             </div>
-            {billType ? <div>+$1/mo</div> : <div>+$10/yr</div>}
+            <div className="online-service-info">
+              {billType ? <div>+$1/mo</div> : <div>+$10/yr</div>}
+            </div>
           </div>
+
           <div className="individual-add-ons-container">
             <div className="checkbox-add-on-type-container">
               <input
@@ -101,8 +106,11 @@ const AddOns = () => {
                 <div>Extra 1TB of vloud save</div>
               </div>
             </div>
-            {billType ? <div>+$2/mo</div> : <div>+$20/yr</div>}
+            <div className="larger-storage-info">
+              {billType ? <div>+$2/mo</div> : <div>+$20/yr</div>}
+            </div>
           </div>
+
           <div className="individual-add-ons-container">
             <div className="checkbox-add-on-type-container">
               <input
@@ -116,14 +124,20 @@ const AddOns = () => {
                 <div>Custom theme on your profile</div>
               </div>
             </div>
+            <div className="customizable-profile-info">
             {billType ? <div>+$2/mo</div> : <div>+$20/yr</div>}
+            </div>
           </div>
+
+
         </div>
       </div>
 
       <div className="buttons-container">
         <div onClick={handleGoBack}>Go back</div>
-        <button onClick={handleSubmit} className="next-step-button">Next Step</button>
+        <button onClick={handleSubmit} className="next-step-button">
+          Next Step
+        </button>
       </div>
     </div>
   );

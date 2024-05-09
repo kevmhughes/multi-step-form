@@ -15,6 +15,9 @@ const handleSwitch = (e) => {
   setState({
     ...state,
     "billingType": value,
+    "addOn1": "",
+    "addOn2": "",
+    "addOn3": "",
   }) 
 }
 

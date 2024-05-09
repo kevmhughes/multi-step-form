@@ -23,7 +23,7 @@ function App() {
       addOn3: "",
     }
   );
-  console.log(state)
+  /* console.log(state) */
   const [page, setPage] = useState(1);
 
   // handle personal info form (onChange)
@@ -53,11 +53,10 @@ function App() {
   }
 
 
-
   return (
     <>
       <AppContext.Provider
-        value={{ page, setPage, state, setState, handleChange, handleSubmit, handleGoBack }}
+        value={{ page, setPage, state, setState, handleChange, handleSubmit, handleGoBack}}
       >
           <div className="main-container">
             <SideBar />

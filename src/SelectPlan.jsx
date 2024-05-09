@@ -15,10 +15,10 @@ const SelectPlan = () => {
   
 const handleSelectPlan = (e) => {
     const id = e.target.id
-    /* const value = document.querySelector(`#${id}`).textContent */
+
     setState({
       ...state,
-      "planType": id
+      "planType": id,
     }) 
   } 
 
@@ -42,7 +42,7 @@ const handleSelectPlan = (e) => {
 
         {(billType) ? <div className="arcade plan-selector" onClick={handleSelectPlan} id="advanced">
           Advanced
-          $12/mo 2 
+          $12/mo
         </div> : <div className="arcade plan-selector" onClick={handleSelectPlan} id="advanced">
           Advanced
           $120/yr 2 months free
@@ -50,7 +50,7 @@ const handleSelectPlan = (e) => {
         
         {(billType) ? <div className="arcade plan-selector" onClick={handleSelectPlan} id="pro">
           Pro
-          $15/mo 2 
+          $15/mo
         </div> : <div className="arcade plan-selector" onClick={handleSelectPlan} id="pro">
           Pro
           $150/yr 2 months free

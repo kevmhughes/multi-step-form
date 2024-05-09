@@ -17,7 +17,7 @@
   display: flex;
   background: #ffffff;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 780px;
 }
 /* PersonalInfo.Jsx */
@@ -87,14 +87,14 @@ h1 {
   height: 40px;
   padding-left: 20px;
   margin-bottom: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 0.2px solid lightgrey;
   margin-top: 5px;
 }
 .next-step-button {
   height: 40px;
   width: 100px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid #164a8b;
   background-color: #164a8b;
   color: white;
@@ -118,7 +118,7 @@ h1 {
   align-items: center;
   padding: 20px;
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .checkbox-add-on-type-container {
   display: flex;
