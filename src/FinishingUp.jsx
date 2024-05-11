@@ -11,8 +11,6 @@ const FinishingUp = () => {
   const addOn2 = formData.addOn2;
   const addOn3 = formData.addOn3;
   const subTotal = formData.paymentPlan.split(" ")[1]
-  console.log(subTotal.slice(1,subTotal.length-3))
-
 
   const total = parseInt(subTotal.slice(1,subTotal.length-3)) + (formData.addOn1.length > 0 ? parseInt(formData.addOn1.split(" ")[1]): 0 ) + (formData.addOn2.length > 0 ? parseInt(formData.addOn2.split(" ")[1]): 0 ) + (formData.addOn3.length > 0 ? parseInt(formData.addOn3.split(" ")[1]): 0 )
   

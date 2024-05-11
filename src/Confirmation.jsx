@@ -1,5 +1,5 @@
 import React from 'react'
-import thankYouIcon from "./assets/images/icon-thank-you.svg"
+import thankYouIcon from "../public/assets/images/icon-thank-you.svg"
 
 const Confirmation = () => {
   return (

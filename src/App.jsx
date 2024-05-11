@@ -26,7 +26,6 @@ function App() {
   );
   console.log(formData)
   const [page, setPage] = useState(1);
-  console.log(page, "hey")
 
   // handle personal info form (onChange)
   const handleChange = (e) => {
@@ -47,13 +46,11 @@ function App() {
       [e.target.name]: value,
     });
     setPage(page + 1);
-    console.log("pageBBB", page)
   };
 
   // handle going back one page (onSubmit)
   const handleGoBack = () => {
     setPage(page - 1)
-    console.log("pageCCC", page)
   }
 
 

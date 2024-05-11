@@ -1,11 +1,16 @@
 @font-face {
   font-family: "ubuntu-regular";
-  src: url("./assets/fonts/Ubuntu-Regular.ttf");
+  src: url("../public/assets/fonts/Ubuntu-Regular.ttf");
+}
+@font-face {
+  font-family: "ubuntu-medium";
+  src: url("../public/assets/fonts/Ubuntu-Medium.ttf");
 }
 @font-face {
   font-family: "ubuntu-bold";
-  src: url("./assets/fonts/Ubuntu-Bold.ttf");
+  src: url("../public/assets/fonts/Ubuntu-Bold.ttf");
 }
+
 #root {
   height: 100vh;
   width: 100vw;
@@ -35,12 +40,14 @@
   color: hsl(213, 96%, 18%);
 }
 .next-step-button {
-  height: 40px;
-  width: 100px;
+  height: 50px;
+  width: 120px;
   border-radius: 10px;
   border: 1px solid hsl(213, 96%, 18%);
   background-color: hsl(213, 96%, 18%);
   color: white;
+  font-family: 'ubuntu-regular';
+  font-size: 16px;
 }
 .next-step-button:hover {
   border: 1px solid #164a8b;
@@ -49,7 +56,12 @@
 
 /* SideBar.Jsx */
 .sidebar-step-info {
-  font-family: "ubuntu-bold";
+  font-family: "ubuntu-medium";
+}
+.step-number-text {
+ font-size: 13px;
+ margin-bottom: 2px;
+ color: hsl(231, 11%, 63%);
 }
 /* PersonalInfo.Jsx */
 .personal-info-container {
@@ -62,7 +74,7 @@
   width: 450px;
 }
 .left-side-image {
-  background-image: url(./assets/images/bg-sidebar-desktop.svg);
+  background-image: url(../public/assets/images/bg-sidebar-desktop.svg);
   background-repeat: no-repeat;
   background-size: contain;
   height: 568px;
@@ -113,7 +125,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 500px;
+  width: 435px;
 }
 h1 {
   margin-bottom: 10px;
@@ -147,11 +159,50 @@ h1 {
   gap: 20px;
 }
 .plan-selector {
-  height: 170px;
-  width: 150px;
+  height: 140px;
+  width: 90px;
   border: 1px solid black;
   border-radius: 10px;
   border-color: hsl(231, 11%, 63%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+}
+.plan-selected {
+  height: 140px;
+  width: 90px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: hsl(231, 100%, 99%);
+  border-color: hsl(243, 100%, 62%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+}
+.plan-selector:hover {
+  border-color: hsl(243, 100%, 62%);
+}
+.plan-selector:focus {
+  border-color: hsl(336, 100%, 62%);
+}
+.options-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.options-type {
+  font-family: "ubuntu-medium";
+}
+.options-price {
+  color: hsl(231, 11%, 63%);
+  font-size: 14px;
+}
+.options-free-months {
+  font-size: 12px;
 }
 .switch-container {
   margin-top: 50px;
@@ -163,14 +214,18 @@ h1 {
   padding-bottom: 10px;
   align-items: center;
   gap: 30px;
-  font-family: 'ubuntu-bold';
+  font-family: "ubuntu-bold";
   border-radius: 10px;
 }
 .monthly-yearly-selected {
   color: hsl(213, 96%, 18%);
+  font-family: 'ubuntu-medium';
+  font-size: 14px;
 }
 .monthly-yearly-not-selected {
   color: hsl(231, 11%, 63%);
+  font-family: 'ubuntu-medium';
+  font-size: 14px;
 }
 
 /* AddOns.Jsx */
@@ -199,7 +254,7 @@ h1 {
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
+  width: 40px;
   height: 34px;
 }
 
@@ -214,11 +269,11 @@ h1 {
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0;
+  top: 8px;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: hsl(213, 96%, 18%);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -226,8 +281,8 @@ h1 {
 .slider:before {
   position: absolute;
   content: "";
-  height: 16px;
-  width: 16px;
+  height: 12px;
+  width: 12px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -244,16 +299,17 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
 }
 
 /* Rounded sliders */
 .slider.round {
   border-radius: 16px;
   height: 1.5rem;
-  width: 50px;
+  width: 40px;
+  height: 20px;
 }
 
 .slider.round:before {
