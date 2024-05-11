@@ -134,7 +134,7 @@ const handleCheckBox = (e) => {
       </div>
 
       <div className="buttons-container">
-        <div onClick={handleGoBack}>Go back</div>
+        <div className="go-back" onClick={handleGoBack}>Go back</div>
         <button onClick={handleSubmit} className="next-step-button">
           Next Step
         </button>

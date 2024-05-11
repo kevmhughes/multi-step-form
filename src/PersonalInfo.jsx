@@ -10,10 +10,12 @@ const PersonalInfo = () => {
   }, [formData]);
 
   return (
-    <div className="right-side-container">
+    <div className="right-side-container-page-one">
+      <div>
       <h1>Personal Info</h1>
       <div className="subtitle">
         Please provide your name, email address, and phone number.
+      </div>
       </div>
       <form onSubmit={handleSubmit} className="personal-info-form">
         <label htmlFor="name">Name</label>

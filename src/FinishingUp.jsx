@@ -63,7 +63,7 @@ const FinishingUp = () => {
             <div>${total}/yr</div>
         </div>
       <div className="buttons-container">
-        <div onClick={handleGoBack}>Go back</div>
+        <div className="go-back" onClick={handleGoBack}>Go back</div>
         <button type="submit" className="next-step-button" onClick={handleSubmit}>
           Confirm
         </button>

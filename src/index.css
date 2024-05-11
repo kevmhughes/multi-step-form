@@ -2,7 +2,10 @@
   font-family: "ubuntu-regular";
   src: url("./assets/fonts/Ubuntu-Regular.ttf");
 }
-
+@font-face {
+  font-family: "ubuntu-bold";
+  src: url("./assets/fonts/Ubuntu-Bold.ttf");
+}
 #root {
   height: 100vh;
   width: 100vw;
@@ -12,13 +15,41 @@
   align-items: center;
   justify-content: center;
   font-family: "ubuntu-regular";
+  font-size: 16px;
+  color: hsl(213, 96%, 18%);
 }
+
+/* Global */
 .main-container {
   display: flex;
   background: #ffffff;
   padding: 20px;
   border-radius: 10px;
-  width: 780px;
+  width: 900px;
+}
+.go-back {
+  color: hsl(231, 11%, 63%);
+  font-family: "ubuntu-bold";
+}
+.go-back:hover {
+  color: hsl(213, 96%, 18%);
+}
+.next-step-button {
+  height: 40px;
+  width: 100px;
+  border-radius: 10px;
+  border: 1px solid hsl(213, 96%, 18%);
+  background-color: hsl(213, 96%, 18%);
+  color: white;
+}
+.next-step-button:hover {
+  border: 1px solid #164a8b;
+  background-color: #164a8b;
+}
+
+/* SideBar.Jsx */
+.sidebar-step-info {
+  font-family: "ubuntu-bold";
 }
 /* PersonalInfo.Jsx */
 .personal-info-container {
@@ -28,6 +59,7 @@
 .personal-info-form {
   display: flex;
   flex-direction: column;
+  width: 450px;
 }
 .left-side-image {
   background-image: url(./assets/images/bg-sidebar-desktop.svg);
@@ -67,8 +99,16 @@
   top: 6px;
   right: -11px;
 }
+.right-side-container-page-one {
+  margin-left: 95px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 500px;
+}
 .right-side-container {
-  margin-left: 80px;
+  margin-left: 95px;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -77,9 +117,11 @@
 }
 h1 {
   margin-bottom: 10px;
+  font-family: ubuntu-bold;
 }
 .subtitle {
   margin-bottom: 40px;
+  color: hsl(231, 11%, 63%);
 }
 #name,
 #email,
@@ -90,25 +132,45 @@ h1 {
   border-radius: 10px;
   border: 0.2px solid lightgrey;
   margin-top: 5px;
-}
-.next-step-button {
-  height: 40px;
-  width: 100px;
-  border-radius: 10px;
-  border: 1px solid #164a8b;
-  background-color: #164a8b;
-  color: white;
+  color: hsl(213, 96%, 18%);
 }
 .personal-info-button-container {
   display: flex;
   justify-content: flex-end;
+  position: relative;
+  bottom: -120px;
 }
 
 /* SelectPlan.Jsx */
-
 .options-container {
   display: flex;
   gap: 20px;
+}
+.plan-selector {
+  height: 170px;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-color: hsl(231, 11%, 63%);
+}
+.switch-container {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: hsl(231, 100%, 99%);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-items: center;
+  gap: 30px;
+  font-family: 'ubuntu-bold';
+  border-radius: 10px;
+}
+.monthly-yearly-selected {
+  color: hsl(213, 96%, 18%);
+}
+.monthly-yearly-not-selected {
+  color: hsl(231, 11%, 63%);
 }
 
 /* AddOns.Jsx */
@@ -164,8 +226,8 @@ h1 {
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 16px;
+  width: 16px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -174,7 +236,7 @@ h1 {
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: hsl(213, 96%, 18%);
 }
 
 input:focus + .slider {
@@ -189,7 +251,9 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+  border-radius: 16px;
+  height: 1.5rem;
+  width: 50px;
 }
 
 .slider.round:before {
