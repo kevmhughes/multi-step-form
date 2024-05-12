@@ -1,14 +1,14 @@
 @font-face {
   font-family: "ubuntu-regular";
-  src: url("../public/assets/fonts/Ubuntu-Regular.ttf");
+  src: url("./assets/fonts/Ubuntu-Regular.ttf");
 }
 @font-face {
   font-family: "ubuntu-medium";
-  src: url("../public/assets/fonts/Ubuntu-Medium.ttf");
+  src: url("./assets/fonts/Ubuntu-Medium.ttf");
 }
 @font-face {
   font-family: "ubuntu-bold";
-  src: url("../public/assets/fonts/Ubuntu-Bold.ttf");
+  src: url("./assets/fonts/Ubuntu-Bold.ttf");
 }
 
 #root {
@@ -31,6 +31,12 @@
   padding: 20px;
   border-radius: 10px;
   width: 900px;
+}
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 .go-back {
   color: hsl(231, 11%, 63%);
@@ -74,7 +80,7 @@
   width: 450px;
 }
 .left-side-image {
-  background-image: url(../public/assets/images/bg-sidebar-desktop.svg);
+  background-image: url(./assets/images/bg-sidebar-desktop.svg);
   background-repeat: no-repeat;
   background-size: contain;
   height: 568px;
@@ -264,7 +270,6 @@ input[type="checkbox"]:checked {
   accent-color: hsl(243, 100%, 62%);
   border: 3px solid hsl(243, 100%, 62%);
   box-sizing: border-box;
-
 }
 .add-on-service-type {
   font-family: "ubuntu-medium";
@@ -276,16 +281,107 @@ input[type="checkbox"]:checked {
 .online-service-info,
 .customizable-profile-info,
 .larger-storage-info {
- color:hsl(243, 100%, 62%);
-}
-.buttons-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  color: hsl(243, 100%, 62%);
 }
 
-/* SWITCH BELOW
- */
+/* FinishingUp.jsx */
+.main-selection {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: hsl(231, 100%, 99%);
+  border-radius: 10px 10px 0 0;
+}
+.main-selection-without-add-ons{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: hsl(231, 100%, 99%);
+  border-radius: 10px 10px 10px 10px;
+}
+.add-on-selection {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 0 20px;
+  background-color: hsl(231, 100%, 99%);
+  color: hsl(231, 11%, 63%);
+  font-size: 14px;
+}
+.add-on-extra {
+  color: hsl(213, 96%, 18%);
+}
+.finishing-up-plan-selection {
+  font-family: "ubuntu-bold";
+}
+.finishing-up-change-plan-selection-button {
+  color: hsl(231, 11%, 63%);
+  text-decoration: underline;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.finishing-up-change-plan-selection-button:hover {
+  color: #928CFE;
+}
+.line-break-container {
+  display: flex;
+}
+.line-break-start-and-end {
+  border-bottom: 1px solid #FAFBFF;
+  width: 20px;
+}
+.line-break {
+  border-bottom: 1px solid #e7e8ee;
+  width: 395px;
+}
+.final-coloured-element {
+  height: 20px;
+  background-color: hsl(231, 100%, 99%);
+  border-radius: 0 0 10px 10px;
+}
+.total-payment-description {
+  display: flex;
+  color: hsl(231, 11%, 63%);
+  font-size: 14px;
+}
+.total-payment-plan {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.total-payment {
+  color: hsl(243, 100%, 62%);
+  font-family: "ubuntu-bold"
+}
+.confirm-button {
+  height: 50px;
+  width: 120px;
+  border-radius: 10px;
+  border: 1px solid #928CFE;
+  background-color: #928CFE;
+  color: white;
+  font-family: "ubuntu-regular";
+  font-size: 16px;
+}
+.confirm-button:hover {
+  border: 1px solid hsl(228, 100%, 84%);
+  background-color: hsl(228, 100%, 84%);
+}
+
+/* Confirmation.Jsx */
+
+.final-right-side-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.confirmation-message {
+  width: 422px;
+  text-align: center;
+}
+
+/* Customized switch */
 /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -347,21 +443,6 @@ input:checked + .slider:before {
   width: 40px;
   height: 20px;
 }
-
 .slider.round:before {
   border-radius: 50%;
-}
-
-/* Confirmation.Jsx */
-
-.final-right-side-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-.confirmation-message {
-  width: 422px;
-  text-align: center;
 }

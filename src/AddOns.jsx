@@ -7,14 +7,19 @@ const AddOns = () => {
 
   useEffect(() => {
     // storing data
-
-    if (formData.addOn1.length > 0) {
+    if (formData.addOn1.length == "") {
+      document.querySelector("#online-service").checked = false;
+    } else {
       document.querySelector("#online-service").checked = true;
     }
-    if (formData.addOn2.length > 0) {
+    if (formData.addOn2.length == "") {
+      document.querySelector("#larger-storage").checked = false;
+    } else {
       document.querySelector("#larger-storage").checked = true;
     }
-    if (formData.addOn3.length > 0) {
+    if (formData.addOn3.length == "") {
+      document.querySelector("#customizable-profile").checked = false;
+    } else {
       document.querySelector("#customizable-profile").checked = true;
     }
     localStorage.setItem("storedData", JSON.stringify(formData));
@@ -26,13 +31,7 @@ const AddOns = () => {
     if (e.target.checked) {
       setFormData({
         ...formData,
-        addOn1:
-          e.target.id +
-          " " +
-          document
-            .querySelector(".online-service-info")
-            .textContent.split("/")[0]
-            .slice(2),
+        addOn1:`${e.target.id + " " + document.querySelector(".online-service-info").textContent.slice(1)}`
       });
     } else if (e.target.checked == false) {
       setFormData({
@@ -40,19 +39,16 @@ const AddOns = () => {
         addOn1: "",
       });
     }
+    console.log("dude", e.target.id + " " + document.querySelector(".online-service-info").textContent.slice(1))
+
   };
+
 
   const handleCheckBox2 = (e) => {
     if (e.target.checked) {
       setFormData({
         ...formData,
-        addOn2:
-          e.target.id +
-          " " +
-          document
-            .querySelector(".larger-storage-info")
-            .textContent.split("/")[0]
-            .slice(2),
+        addOn2:`${e.target.id + " " + document.querySelector(".larger-storage-info").textContent.slice(1)}`
       });
     } else if (e.target.checked == false) {
       setFormData({
@@ -66,13 +62,7 @@ const AddOns = () => {
     if (e.target.checked) {
       setFormData({
         ...formData,
-        addOn3:
-          e.target.id +
-          " " +
-          document
-            .querySelector(".customizable-profile-info")
-            .textContent.split("/")[0]
-            .slice(2),
+        addOn3:`${e.target.id + " " + document.querySelector(".customizable-profile-info").textContent.slice(1)}`
       });
     } else if (e.target.checked == false) {
       setFormData({
@@ -81,6 +71,8 @@ const AddOns = () => {
       });
     }
   };
+
+  console.log("heyyyy", document.querySelector(".customizable-profile-info"))
 
   return (
     <div className="right-side-container">
