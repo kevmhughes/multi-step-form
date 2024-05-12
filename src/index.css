@@ -46,7 +46,7 @@
   border: 1px solid hsl(213, 96%, 18%);
   background-color: hsl(213, 96%, 18%);
   color: white;
-  font-family: 'ubuntu-regular';
+  font-family: "ubuntu-regular";
   font-size: 16px;
 }
 .next-step-button:hover {
@@ -59,9 +59,9 @@
   font-family: "ubuntu-medium";
 }
 .step-number-text {
- font-size: 13px;
- margin-bottom: 2px;
- color: hsl(231, 11%, 63%);
+  font-size: 13px;
+  margin-bottom: 2px;
+  color: hsl(231, 11%, 63%);
 }
 /* PersonalInfo.Jsx */
 .personal-info-container {
@@ -219,12 +219,12 @@ h1 {
 }
 .monthly-yearly-selected {
   color: hsl(213, 96%, 18%);
-  font-family: 'ubuntu-medium';
+  font-family: "ubuntu-medium";
   font-size: 14px;
 }
 .monthly-yearly-not-selected {
   color: hsl(231, 11%, 63%);
-  font-family: 'ubuntu-medium';
+  font-family: "ubuntu-medium";
   font-size: 14px;
 }
 
@@ -236,11 +236,47 @@ h1 {
   padding: 20px;
   border: 1px solid black;
   border-radius: 10px;
+  margin-bottom: 20px;
+}
+.individual-add-ons-container:hover {
+  border-color: hsl(243, 100%, 62%);
+}
+.individual-add-ons-container-checked {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-color: hsl(243, 100%, 62%);
+  background-color: hsl(231, 100%, 99%);
 }
 .checkbox-add-on-type-container {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+}
+input[type="checkbox"] {
+  width: 20px;
+}
+input[type="checkbox"]:checked {
+  accent-color: hsl(243, 100%, 62%);
+  border: 3px solid hsl(243, 100%, 62%);
+  box-sizing: border-box;
+
+}
+.add-on-service-type {
+  font-family: "ubuntu-medium";
+}
+.add-on-service-description {
+  color: hsl(231, 11%, 63%);
+  font-size: 14px;
+}
+.online-service-info,
+.customizable-profile-info,
+.larger-storage-info {
+ color:hsl(243, 100%, 62%);
 }
 .buttons-container {
   display: flex;

@@ -20,30 +20,39 @@ const AddOns = () => {
     localStorage.setItem("storedData", JSON.stringify(formData));
   }, [formData]);
 
+  const billType = formData.billingType == "monthly";
 
-const billType = formData.billingType == "monthly";
-
-const handleCheckBox = (e) => {
+  const handleCheckBox = (e) => {
     if (e.target.checked) {
       setFormData({
         ...formData,
-        "addOn1":
-          e.target.id + " " + document.querySelector(".online-service-info").textContent.split("/")[0].slice(2)
+        addOn1:
+          e.target.id +
+          " " +
+          document
+            .querySelector(".online-service-info")
+            .textContent.split("/")[0]
+            .slice(2),
       });
     } else if (e.target.checked == false) {
       setFormData({
         ...formData,
-        "addOn1": "",
+        addOn1: "",
       });
     }
-  }; 
+  };
 
   const handleCheckBox2 = (e) => {
     if (e.target.checked) {
       setFormData({
         ...formData,
-        "addOn2":
-        e.target.id + " " + document.querySelector(".larger-storage-info").textContent.split("/")[0].slice(2)
+        addOn2:
+          e.target.id +
+          " " +
+          document
+            .querySelector(".larger-storage-info")
+            .textContent.split("/")[0]
+            .slice(2),
       });
     } else if (e.target.checked == false) {
       setFormData({
@@ -57,12 +66,18 @@ const handleCheckBox = (e) => {
     if (e.target.checked) {
       setFormData({
         ...formData,
-        "addOn3": e.target.id + " " + document.querySelector(".customizable-profile-info").textContent.split("/")[0].slice(2)
+        addOn3:
+          e.target.id +
+          " " +
+          document
+            .querySelector(".customizable-profile-info")
+            .textContent.split("/")[0]
+            .slice(2),
       });
     } else if (e.target.checked == false) {
       setFormData({
         ...formData,
-        "addOn3": "",
+        addOn3: "",
       });
     }
   };
@@ -75,7 +90,13 @@ const handleCheckBox = (e) => {
           Add-ons help enhance your gaming experience
         </div>
         <div>
-          <div className="individual-add-ons-container">
+          <div
+            className={
+              formData.addOn1.length > 0
+                ? "individual-add-ons-container-checked"
+                : "individual-add-ons-container"
+            }
+          >
             <div className="checkbox-add-on-type-container">
               <input
                 type="checkbox"
@@ -84,8 +105,10 @@ const handleCheckBox = (e) => {
                 onChange={handleCheckBox}
               />
               <div>
-                <div>Online service</div>
-                <div>Access to multiplayer games</div>
+                <div className="add-on-service-type">Online service</div>
+                <div className="add-on-service-description">
+                  Access to multiplayer games
+                </div>
               </div>
             </div>
             <div className="online-service-info">
@@ -93,7 +116,13 @@ const handleCheckBox = (e) => {
             </div>
           </div>
 
-          <div className="individual-add-ons-container">
+          <div
+            className={
+              formData.addOn2.length > 0
+                ? "individual-add-ons-container-checked"
+                : "individual-add-ons-container"
+            }
+          >
             <div className="checkbox-add-on-type-container">
               <input
                 type="checkbox"
@@ -102,8 +131,10 @@ const handleCheckBox = (e) => {
                 onChange={handleCheckBox2}
               />
               <div>
-                <div>Larger storage</div>
-                <div>Extra 1TB of vloud save</div>
+                <div className="add-on-service-type">Larger storage</div>
+                <div className="add-on-service-description">
+                  Extra 1TB of vloud save
+                </div>
               </div>
             </div>
             <div className="larger-storage-info">
@@ -111,7 +142,13 @@ const handleCheckBox = (e) => {
             </div>
           </div>
 
-          <div className="individual-add-ons-container">
+          <div
+            className={
+              formData.addOn3.length > 0
+                ? "individual-add-ons-container-checked"
+                : "individual-add-ons-container"
+            }
+          >
             <div className="checkbox-add-on-type-container">
               <input
                 type="checkbox"
@@ -120,21 +157,23 @@ const handleCheckBox = (e) => {
                 onChange={handleCheckBox3}
               />
               <div>
-                <div>Customizable profile</div>
-                <div>Custom theme on your profile</div>
+                <div className="add-on-service-type">Customizable profile</div>
+                <div className="add-on-service-description">
+                  Custom theme on your profile
+                </div>
               </div>
             </div>
             <div className="customizable-profile-info">
-            {billType ? <div>+$2/mo</div> : <div>+$20/yr</div>}
+              {billType ? <div>+$2/mo</div> : <div>+$20/yr</div>}
             </div>
           </div>
-
-
         </div>
       </div>
 
       <div className="buttons-container">
-        <div className="go-back" onClick={handleGoBack}>Go back</div>
+        <div className="go-back" onClick={handleGoBack}>
+          Go back
+        </div>
         <button onClick={handleSubmit} className="next-step-button">
           Next Step
         </button>
