@@ -41,6 +41,7 @@
 .go-back {
   color: hsl(231, 11%, 63%);
   font-family: "ubuntu-bold";
+  cursor: pointer;
 }
 .go-back:hover {
   color: hsl(213, 96%, 18%);
@@ -54,6 +55,7 @@
   color: white;
   font-family: "ubuntu-regular";
   font-size: 16px;
+  cursor: pointer;
 }
 .next-step-button:hover {
   border: 1px solid #164a8b;
@@ -78,6 +80,21 @@
   display: flex;
   flex-direction: column;
   width: 450px;
+}
+.error-message-and-label-container {
+  display: flex;
+  justify-content: space-between;
+}
+.error-message-name, .error-message-email, .error-message-phone {
+  color: red;
+  opacity: 75%;
+  font-size: 12px;
+  position: relative;
+  top: 10px;
+  display: none
+}
+.label-styling {
+  margin-bottom: 5px;
 }
 .left-side-image {
   background-image: url(./assets/images/bg-sidebar-desktop.svg);
@@ -151,12 +168,21 @@ h1 {
   border: 0.2px solid lightgrey;
   margin-top: 5px;
   color: hsl(213, 96%, 18%);
-}
+  cursor: pointer;
+  font-family: 'ubuntu-medium';
+  font-size: 16px;
+} 
+#name:hover,
+#email:hover,
+#phone:hover {
+  border: 0.2px solid hsl(243, 100%, 62%);
+} 
 .personal-info-button-container {
   display: flex;
   justify-content: flex-end;
   position: relative;
-  bottom: -120px;
+  bottom: -80.75px;
+  left: -15px;
 }
 
 /* SelectPlan.Jsx */
@@ -175,6 +201,7 @@ h1 {
   align-items: flex-start;
   justify-content: space-between;
   padding: 20px;
+  cursor: pointer;
 }
 .plan-selected {
   height: 140px;
@@ -188,6 +215,7 @@ h1 {
   align-items: flex-start;
   justify-content: space-between;
   padding: 20px;
+  cursor: pointer;
 }
 .plan-selector:hover {
   border-color: hsl(243, 100%, 62%);
@@ -243,6 +271,7 @@ h1 {
   border: 1px solid black;
   border-radius: 10px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 .individual-add-ons-container:hover {
   border-color: hsl(243, 100%, 62%);
@@ -257,6 +286,7 @@ h1 {
   margin-bottom: 20px;
   border-color: hsl(243, 100%, 62%);
   background-color: hsl(231, 100%, 99%);
+  cursor: pointer;
 }
 .checkbox-add-on-type-container {
   display: flex;
@@ -318,6 +348,7 @@ input[type="checkbox"]:checked {
   text-decoration: underline;
   margin-top: 10px;
   font-size: 14px;
+  cursor: pointer;
 }
 .finishing-up-change-plan-selection-button:hover {
   color: #928CFE;
@@ -361,6 +392,7 @@ input[type="checkbox"]:checked {
   color: white;
   font-family: "ubuntu-regular";
   font-size: 16px;
+  cursor: pointer;
 }
 .confirm-button:hover {
   border: 1px solid hsl(228, 100%, 84%);
@@ -379,6 +411,7 @@ input[type="checkbox"]:checked {
 .confirmation-message {
   width: 422px;
   text-align: center;
+  color: hsl(231, 11%, 63%);
 }
 
 /* Customized switch */
@@ -446,3 +479,7 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+
+
+/* ADD TO PersonaInfo.jsx LATER */

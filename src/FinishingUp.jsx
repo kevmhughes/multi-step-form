@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { AppContext } from "./App";
 
 const FinishingUp = () => {
-  const { handleGoBack, formData, handleSubmit, setFormData } =
+  const { handleGoBack, formData, pageChange, setFormData } =
     useContext(AppContext);
 
     useEffect(() => {
@@ -76,7 +76,6 @@ const FinishingUp = () => {
   const addOn2 = formData.addOn2;
   const addOn3 = formData.addOn3;
   const subTotal = formData.paymentPlan
-  console.log("heysjy", formData.paymentPlan)
   const FirstLetterOfPlanToUppercase =
     planType[0].toUpperCase() + planType.slice(1); 
   const areThereAddOns = addOn1.length > 0 || addOn2.length > 0 || addOn3.length > 0
@@ -174,7 +173,7 @@ const total =
         <div className="go-back" onClick={handleGoBack}>
           Go back
         </div>
-        <button type="submit" className="confirm-button" onClick={handleSubmit}>
+        <button type="submit" className="confirm-button" onClick={pageChange}>
           Confirm
         </button>
       </div>

@@ -6,11 +6,10 @@ import advancedImg from "./assets/images/icon-advanced.svg";
 import proImg from "./assets/images/icon-pro.svg";
 
 const SelectPlan = () => {
-  const { handleSubmit, handleGoBack, setFormData, formData } =
+  const { pageChange, handleGoBack, setFormData, formData } =
     useContext(AppContext);
 
   useEffect(() => {
-    console.log("Payment plan:", formData.paymentPlan);
     localStorage.setItem("storedData", JSON.stringify(formData));
   }, [formData]);
 
@@ -18,9 +17,6 @@ const SelectPlan = () => {
   const arcadeOption = formData.planType == "arcade";
   const advancedOption = formData.planType == "advanced";
   const proOption = formData.planType == "pro";
-
- /*  const planType = formData.planType;
-  console.log("Plan type:", `"#${planType}"`); */
 
   const handleSelectPlan = (e) => {
     const id = e.target.id;
@@ -240,7 +236,7 @@ const SelectPlan = () => {
         <div className="go-back" onClick={handleGoBack}>
           Go back
         </div>
-        <button onClick={handleSubmit} className="next-step-button">
+        <button onClick={pageChange} className="next-step-button">
           Next Step
         </button>
       </div>

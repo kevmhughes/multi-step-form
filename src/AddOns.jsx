@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { AppContext } from "./App";
 
 const AddOns = () => {
-  const { handleGoBack, handleSubmit, formData, setFormData } =
+  const { handleGoBack, pageChange, formData, setFormData } =
     useContext(AppContext);
 
   useEffect(() => {
@@ -39,8 +39,6 @@ const AddOns = () => {
         addOn1: "",
       });
     }
-    console.log("dude", e.target.id + " " + document.querySelector(".online-service-info").textContent.slice(1))
-
   };
 
 
@@ -71,8 +69,6 @@ const AddOns = () => {
       });
     }
   };
-
-  console.log("heyyyy", document.querySelector(".customizable-profile-info"))
 
   return (
     <div className="right-side-container">
@@ -166,7 +162,7 @@ const AddOns = () => {
         <div className="go-back" onClick={handleGoBack}>
           Go back
         </div>
-        <button onClick={handleSubmit} className="next-step-button">
+        <button onClick={pageChange} className="next-step-button">
           Next Step
         </button>
       </div>
