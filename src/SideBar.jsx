@@ -3,7 +3,7 @@ import { AppContext } from "./App";
 
 const SideBar = () => {
 
-  const { page, setPage } = useContext(AppContext);
+  const { page } = useContext(AppContext);
 
   return (
     <div>

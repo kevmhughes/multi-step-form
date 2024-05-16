@@ -32,6 +32,14 @@
   border-radius: 10px;
   width: 900px;
 }
+.right-side-container {
+  margin-left: 95px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 435px;
+}
 .buttons-container {
   display: flex;
   justify-content: space-between;
@@ -141,14 +149,6 @@
   flex-direction: column;
   justify-content: flex-start;
   width: 500px;
-}
-.right-side-container {
-  margin-left: 95px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 435px;
 }
 h1 {
   margin-bottom: 10px;
@@ -480,6 +480,60 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+@media only screen and (max-width: 600px) {
 
+/* Global */
+#root {
+ /*  width: 100%; */
+  background-image: url(./assets/images/bg-sidebar-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 
-/* ADD TO PersonaInfo.jsx LATER */
+.right-side-container{
+  width: 100%;
+  margin: 0;
+}
+.main-container{
+  display: flex;
+  background: #ffffff;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  /* width: 100%; */
+  margin: 20px;
+}
+.left-side-image {
+ display: none;
+}
+.left-side-image-info {
+  flex-direction: row;
+}
+.step-number-text {
+  display: none
+}
+.sidebar-step-info {
+  display: none;
+}
+
+/* SelectPlan.Jsx */
+
+.plan-selected {
+  height: 40px;
+  width: calc(100% - 40px);
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 20px
+}
+.plan-selector {
+  height: 40px;
+  width: calc(100% - 40px);
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 20px
+}
+.options-container{
+  flex-direction: column;
+}
+
+}
