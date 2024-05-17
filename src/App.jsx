@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-escape */
 import "./App.css";
 import SideBar from "./SideBar";
+import SideBarMobile from "./SideBarMobile";
 import PersonalInfo from "./PersonalInfo";
 import SelectPlan from "./SelectPlan";
 import AddOns from "./AddOns";
@@ -41,19 +42,26 @@ function App() {
     }
 
     // validate email field on change
-    const regexEmail = /^[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?/g;
+    const regexEmail =
+      /^[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?/g;
     if (formData.email.length > 1 && regexEmail.test(formData.email)) {
       document.querySelector("#email").style.borderColor = "lightgrey";
       document.querySelector(".error-message-email").style = "display: none";
     }
 
     // validate phone field on change
-    const removeSpaces = (formData.phone).slice(1).split(" ").join("").length
-    const convertStringToNumber = Number((formData.phone).slice(1).split(" ").join(""))
-    if ( removeSpaces >= 6 && removeSpaces <= 12 && !isNaN(convertStringToNumber)) {
+    const removeSpaces = formData.phone.slice(1).split(" ").join("").length;
+    const convertStringToNumber = Number(
+      formData.phone.slice(1).split(" ").join("")
+    );
+    if (
+      removeSpaces >= 6 &&
+      removeSpaces <= 12 &&
+      !isNaN(convertStringToNumber)
+    ) {
       document.querySelector("#phone").style.borderColor = "lightgrey";
       document.querySelector(".error-message-phone").style = "display: none";
-      console.log("length", formData.phone.length)
+      console.log("length", formData.phone.length);
     }
 
     const value = e.target.value;
@@ -70,21 +78,28 @@ function App() {
       document.querySelector(".error-message-name").style = "display: none";
     }
 
-     // validate email field on blur
-     const regexEmail = /^[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?/g;
-     if (formData.email.length > 1 && regexEmail.test(formData.email)) {
-       document.querySelector("#email").style.borderColor = "lightgrey";
-       document.querySelector(".error-message-email").style = "display: none";
-     }
+    // validate email field on blur
+    const regexEmail =
+      /^[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?/g;
+    if (formData.email.length > 1 && regexEmail.test(formData.email)) {
+      document.querySelector("#email").style.borderColor = "lightgrey";
+      document.querySelector(".error-message-email").style = "display: none";
+    }
 
     // validate phone field on blur
-    const removeSpaces = (formData.phone).slice(1).split(" ").join("").length
-    const convertStringToNumber = Number((formData.phone).slice(1).split(" ").join(""))
-    if (removeSpaces >= 6 && removeSpaces <= 12 && !isNaN(convertStringToNumber)) {
+    const removeSpaces = formData.phone.slice(1).split(" ").join("").length;
+    const convertStringToNumber = Number(
+      formData.phone.slice(1).split(" ").join("")
+    );
+    if (
+      removeSpaces >= 6 &&
+      removeSpaces <= 12 &&
+      !isNaN(convertStringToNumber)
+    ) {
       document.querySelector("#phone").style.borderColor = "lightgrey";
       document.querySelector(".error-message-phone").style = "display: none";
     }
-  }
+  };
 
   // handle going back one page (onSubmit)
   const handleGoBack = () => {
@@ -108,14 +123,13 @@ function App() {
     }
 
     // validate email field with 2 different messages
-    const regexEmail = /^[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?/g;
+    const regexEmail =
+      /^[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?/g;
     if (formData.email.length == 0) {
       document.querySelector("#email").style.borderColor = "red";
       document.querySelector(".error-message-email").style = "display: inline";
-      return; 
-    } else if (
-      regexEmail.test(formData.email) === false
-    ) {
+      return;
+    } else if (regexEmail.test(formData.email) === false) {
       document.querySelector("#email").style.borderColor = "red";
       document.querySelector(".error-message-email").style = "display: inline";
       document.querySelector(".error-message-email").textContent =
@@ -123,14 +137,20 @@ function App() {
       return;
     }
 
-    // validate phone field 
-    const removeSpaces = (formData.phone).slice(1).split(" ").join("").length
-    const convertStringToNumber = Number((formData.phone).slice(1).split(" ").join(""))
+    // validate phone field
+    const removeSpaces = formData.phone.slice(1).split(" ").join("").length;
+    const convertStringToNumber = Number(
+      formData.phone.slice(1).split(" ").join("")
+    );
     if (formData.phone.length == 0) {
       document.querySelector("#phone").style.borderColor = "red";
       document.querySelector(".error-message-phone").style = "display: inline";
       return;
-    } else if ( removeSpaces < 6 || removeSpaces > 12 ||  isNaN(convertStringToNumber)) {
+    } else if (
+      removeSpaces < 6 ||
+      removeSpaces > 12 ||
+      isNaN(convertStringToNumber)
+    ) {
       document.querySelector("#phone").style.borderColor = "red";
       document.querySelector(".error-message-phone").style = "display: inline";
       document.querySelector(".error-message-phone").textContent =
@@ -165,16 +185,20 @@ function App() {
           handleGoBack,
           handleSubmit,
           pageChange,
-          handleBlur
+          handleBlur,
         }}
       >
-        <div className="main-container">
-          <SideBar />
-          {page == 1 && <PersonalInfo />}
-          {page == 2 && <SelectPlan />}
-          {page == 3 && <AddOns />}
-          {page == 4 && <FinishingUp />}
-          {page == 5 && <Confirmation />}
+        <div className="outer-container-for-mobile-view">
+          <SideBarMobile />
+          <div className="main-container">
+            <SideBar />
+            {page == 1 && <PersonalInfo />}
+            {page == 2 && <SelectPlan />}
+            {page == 3 && <AddOns />}
+            {page == 4 && <FinishingUp />}
+            {page == 5 && <Confirmation />}
+          </div>
+          {/* <div>Hey</div> */}
         </div>
       </AppContext.Provider>
     </>

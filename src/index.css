@@ -11,6 +11,10 @@
   src: url("./assets/fonts/Ubuntu-Bold.ttf");
 }
 
+body{
+ margin: 0;
+}
+
 #root {
   height: 100vh;
   width: 100vw;
@@ -110,6 +114,9 @@
   background-size: contain;
   height: 568px;
   width: 274px;
+}
+.left-side-image-mobile {
+  display:none
 }
 .left-side-image-info {
   display: flex;
@@ -480,7 +487,7 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
 
 /* Global */
 #root {
@@ -488,8 +495,15 @@ input:checked + .slider:before {
   background-image: url(./assets/images/bg-sidebar-mobile.svg);
   background-repeat: no-repeat;
   background-size: contain;
+  align-items: flex-start;
 }
-
+.outer-container-for-mobile-view{
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 40px);
+  align-items: center;
+  gap: 50px;
+}
 .right-side-container{
   width: 100%;
   margin: 0;
@@ -500,20 +514,39 @@ input:checked + .slider:before {
   border-radius: 10px;
   flex-direction: column;
   align-items: center;
-  /* width: 100%; */
+  width: calc(100% - 40px);
   margin: 20px;
+  height: 500px;
 }
 .left-side-image {
  display: none;
-}
+} 
 .left-side-image-info {
   flex-direction: row;
+  margin-left: 0;
 }
-.step-number-text {
+/* .step-number-text {
   display: none
 }
 .sidebar-step-info {
   display: none;
+} */
+
+/* PersonalInfo.Jsx */
+
+.right-side-container-page-one {
+  margin-left: 0;
+  width: auto;
+}
+
+.personal-info-form {
+  width: auto;
+}
+.left-side-image-info {
+  gap: 10px;
+}
+.left-side-image-mobile {
+  display: inline;
 }
 
 /* SelectPlan.Jsx */
