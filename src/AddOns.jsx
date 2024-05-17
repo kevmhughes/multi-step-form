@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { AppContext } from "./App";
+import Button from "./Button";
 
 const AddOns = () => {
   const { handleGoBack, pageChange, formData, setFormData } =
@@ -31,7 +32,11 @@ const AddOns = () => {
     if (e.target.checked) {
       setFormData({
         ...formData,
-        addOn1:`${e.target.id + " " + document.querySelector(".online-service-info").textContent.slice(1)}`
+        addOn1: `${
+          e.target.id +
+          " " +
+          document.querySelector(".online-service-info").textContent.slice(1)
+        }`,
       });
     } else if (e.target.checked == false) {
       setFormData({
@@ -41,12 +46,15 @@ const AddOns = () => {
     }
   };
 
-
   const handleCheckBox2 = (e) => {
     if (e.target.checked) {
       setFormData({
         ...formData,
-        addOn2:`${e.target.id + " " + document.querySelector(".larger-storage-info").textContent.slice(1)}`
+        addOn2: `${
+          e.target.id +
+          " " +
+          document.querySelector(".larger-storage-info").textContent.slice(1)
+        }`,
       });
     } else if (e.target.checked == false) {
       setFormData({
@@ -60,7 +68,13 @@ const AddOns = () => {
     if (e.target.checked) {
       setFormData({
         ...formData,
-        addOn3:`${e.target.id + " " + document.querySelector(".customizable-profile-info").textContent.slice(1)}`
+        addOn3: `${
+          e.target.id +
+          " " +
+          document
+            .querySelector(".customizable-profile-info")
+            .textContent.slice(1)
+        }`,
       });
     } else if (e.target.checked == false) {
       setFormData({
@@ -157,14 +171,8 @@ const AddOns = () => {
           </div>
         </div>
       </div>
-
-      <div className="buttons-container">
-        <div className="go-back" onClick={handleGoBack}>
-          Go back
-        </div>
-        <button onClick={pageChange} className="next-step-button">
-          Next Step
-        </button>
+      <div className="button-desktop-view">
+        <Button />
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import SwitchComponent from "./SwitchComponent";
 import arcadeImg from "./assets/images/icon-arcade.svg";
 import advancedImg from "./assets/images/icon-advanced.svg";
 import proImg from "./assets/images/icon-pro.svg";
+import Button from "./Button";
 
 const SelectPlan = () => {
   const { pageChange, handleGoBack, setFormData, formData } =
@@ -23,7 +24,7 @@ const SelectPlan = () => {
     if (id == "arcade" && formData.billingType == "monthly") {
       setFormData({
         ...formData,
-        
+
         planType: "arcade",
         paymentPlan: "$9/mo",
       });
@@ -232,13 +233,8 @@ const SelectPlan = () => {
           </div>
         </div>
       </div>
-      <div className="buttons-container">
-        <div className="go-back" onClick={handleGoBack}>
-          Go back
-        </div>
-        <button onClick={pageChange} className="next-step-button">
-          Next Step
-        </button>
+      <div className="button-desktop-view">
+        <Button />
       </div>
     </div>
   );

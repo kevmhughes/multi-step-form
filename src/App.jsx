@@ -8,6 +8,7 @@ import AddOns from "./AddOns";
 import FinishingUp from "./FinishingUp";
 import { useState, createContext } from "react";
 import Confirmation from "./Confirmation";
+import Button from "./Button";
 
 export const AppContext = createContext();
 
@@ -198,7 +199,9 @@ function App() {
             {page == 4 && <FinishingUp />}
             {page == 5 && <Confirmation />}
           </div>
-          {/* <div>Hey</div> */}
+          <div className="button-mobile-view">
+          <Button /> 
+          </div>
         </div>
       </AppContext.Provider>
     </>

@@ -11,8 +11,8 @@
   src: url("./assets/fonts/Ubuntu-Bold.ttf");
 }
 
-body{
- margin: 0;
+body {
+  margin: 0;
 }
 
 #root {
@@ -74,6 +74,14 @@ body{
   background-color: #164a8b;
 }
 
+/* Button.Jsx */
+.button-mobile-view {
+  display: none;
+}
+.button-desktop-view {
+  display: inline;
+}
+
 /* SideBar.Jsx */
 .sidebar-step-info {
   font-family: "ubuntu-medium";
@@ -97,13 +105,15 @@ body{
   display: flex;
   justify-content: space-between;
 }
-.error-message-name, .error-message-email, .error-message-phone {
+.error-message-name,
+.error-message-email,
+.error-message-phone {
   color: red;
   opacity: 75%;
   font-size: 12px;
   position: relative;
   top: 10px;
-  display: none
+  display: none;
 }
 .label-styling {
   margin-bottom: 5px;
@@ -116,7 +126,7 @@ body{
   width: 274px;
 }
 .left-side-image-mobile {
-  display:none
+  display: none;
 }
 .left-side-image-info {
   display: flex;
@@ -176,14 +186,14 @@ h1 {
   margin-top: 5px;
   color: hsl(213, 96%, 18%);
   cursor: pointer;
-  font-family: 'ubuntu-medium';
+  font-family: "ubuntu-medium";
   font-size: 16px;
-} 
+}
 #name:hover,
 #email:hover,
 #phone:hover {
   border: 0.2px solid hsl(243, 100%, 62%);
-} 
+}
 .personal-info-button-container {
   display: flex;
   justify-content: flex-end;
@@ -329,7 +339,7 @@ input[type="checkbox"]:checked {
   background-color: hsl(231, 100%, 99%);
   border-radius: 10px 10px 0 0;
 }
-.main-selection-without-add-ons{
+.main-selection-without-add-ons {
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -358,13 +368,13 @@ input[type="checkbox"]:checked {
   cursor: pointer;
 }
 .finishing-up-change-plan-selection-button:hover {
-  color: #928CFE;
+  color: #928cfe;
 }
 .line-break-container {
   display: flex;
 }
 .line-break-start-and-end {
-  border-bottom: 1px solid #FAFBFF;
+  border-bottom: 1px solid #fafbff;
   width: 20px;
 }
 .line-break {
@@ -388,14 +398,14 @@ input[type="checkbox"]:checked {
 }
 .total-payment {
   color: hsl(243, 100%, 62%);
-  font-family: "ubuntu-bold"
+  font-family: "ubuntu-bold";
 }
 .confirm-button {
   height: 50px;
   width: 120px;
   border-radius: 10px;
-  border: 1px solid #928CFE;
-  background-color: #928CFE;
+  border: 1px solid #928cfe;
+  background-color: #928cfe;
   color: white;
   font-family: "ubuntu-regular";
   font-size: 16px;
@@ -488,85 +498,100 @@ input:checked + .slider:before {
 }
 
 @media only screen and (max-width: 900px) {
+  /* Global */
+  #root {
+    /*  width: 100%; */
+    background-image: url(./assets/images/bg-sidebar-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    align-items: flex-start;
+  }
+  .outer-container-for-mobile-view {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 40px);
+    align-items: center;
+    gap: 50px;
+  }
+  .right-side-container {
+    width: 100%;
+    margin: 0;
+  }
+  .main-container {
+    display: flex;
+    background: #ffffff;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 40px);
+    margin: 20px;
+    height: 500px;
+  }
+  .left-side-image {
+    display: none;
+  }
+  .left-side-image-info {
+    flex-direction: row;
+    margin-left: 0;
+  }
+  .button-mobile-view {
+    display: inline;
+    width: calc(100% - 40px);
+  }
+  .button-desktop-view {
+    display: none;
+  }
 
-/* Global */
-#root {
- /*  width: 100%; */
-  background-image: url(./assets/images/bg-sidebar-mobile.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  align-items: flex-start;
-}
-.outer-container-for-mobile-view{
-  display: flex;
-  flex-direction: column;
-  width: calc(100% - 40px);
-  align-items: center;
-  gap: 50px;
-}
-.right-side-container{
-  width: 100%;
-  margin: 0;
-}
-.main-container{
-  display: flex;
-  background: #ffffff;
-  border-radius: 10px;
-  flex-direction: column;
-  align-items: center;
-  width: calc(100% - 40px);
-  margin: 20px;
-  height: 500px;
-}
-.left-side-image {
- display: none;
-} 
-.left-side-image-info {
-  flex-direction: row;
-  margin-left: 0;
-}
-/* .step-number-text {
+  /* .step-number-text {
   display: none
 }
 .sidebar-step-info {
   display: none;
 } */
 
-/* PersonalInfo.Jsx */
+  /* PersonalInfo.Jsx */
 
-.right-side-container-page-one {
-  margin-left: 0;
-  width: auto;
-}
+  .right-side-container-page-one {
+    margin-left: 0;
+    width: auto;
+  }
 
-.personal-info-form {
-  width: auto;
-}
-.left-side-image-info {
-  gap: 10px;
-}
-.left-side-image-mobile {
-  display: inline;
-}
+  .personal-info-form {
+    width: auto;
+  }
+  .left-side-image-info {
+    gap: 10px;
+  }
+  .left-side-image-mobile {
+    display: inline;
+  }
 
-/* SelectPlan.Jsx */
+  /* SelectPlan.Jsx */
 
-.plan-selected {
-  height: 40px;
-  width: calc(100% - 40px);
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 20px
-}
-.plan-selector {
-  height: 40px;
-  width: calc(100% - 40px);
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 20px
-}
-.options-container{
-  flex-direction: column;
-}
+  .plan-selected {
+    height: 40px;
+    width: calc(100% - 40px);
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .plan-selector {
+    height: 40px;
+    width: calc(100% - 40px);
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .options-container {
+    flex-direction: column;
+  }
 
+  /* Confirmation.Jsx */
+
+  .confirmation-message {
+    width: 100%;
+  }
+  .final-right-side-container {
+    gap: 20px;
+  }
 }

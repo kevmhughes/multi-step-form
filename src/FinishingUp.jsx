@@ -1,90 +1,118 @@
 import React, { useContext, useEffect } from "react";
 import { AppContext } from "./App";
+import Button from "./Button";
 
 const FinishingUp = () => {
   const { handleGoBack, formData, pageChange, setFormData } =
     useContext(AppContext);
 
-    useEffect(() => {
-      // storing data
-      localStorage.setItem("storedData", JSON.stringify(formData));
-    }, [formData]);
+  useEffect(() => {
+    // storing data
+    localStorage.setItem("storedData", JSON.stringify(formData));
+  }, [formData]);
 
   const handleSwitch = () => {
-    let setBillingType = ""
+    let setBillingType = "";
     if (formData.billingType == "monthly") {
-        setBillingType = "yearly"
+      setBillingType = "yearly";
     } else if (formData.billingType == "yearly") {
-      setBillingType = "monthly"
+      setBillingType = "monthly";
     }
-    let setAddOnType1 = ""
+    let setAddOnType1 = "";
     if (formData.addOn1.length == 0) {
-      setAddOnType1 = ""
+      setAddOnType1 = "";
     } else if (formData.addOn1.length > 0 && formData.billingType == "yearly") {
-      setAddOnType1 = "online-service $1/mo"
-    } else if (formData.addOn1.length > 0 && formData.billingType == "monthly") {
-      setAddOnType1 = "online-service $10/yr"
+      setAddOnType1 = "online-service $1/mo";
+    } else if (
+      formData.addOn1.length > 0 &&
+      formData.billingType == "monthly"
+    ) {
+      setAddOnType1 = "online-service $10/yr";
     }
-  
-    let setAddOnType2 = ""
+
+    let setAddOnType2 = "";
     if (formData.addOn2.length == 0) {
-      setAddOnType2 = ""
+      setAddOnType2 = "";
     } else if (formData.addOn2.length > 0 && formData.billingType == "yearly") {
-      setAddOnType2 = "larger-storage $2/mo"
-    } else if (formData.addOn2.length > 0 && formData.billingType == "monthly") {
-      setAddOnType2 = "larger-storage $20/yr"
+      setAddOnType2 = "larger-storage $2/mo";
+    } else if (
+      formData.addOn2.length > 0 &&
+      formData.billingType == "monthly"
+    ) {
+      setAddOnType2 = "larger-storage $20/yr";
     }
-  
-    let setAddOnType3 = ""
+
+    let setAddOnType3 = "";
     if (formData.addOn3.length == 0) {
-      setAddOnType3 = ""
+      setAddOnType3 = "";
     } else if (formData.addOn3.length > 0 && formData.billingType == "yearly") {
-      setAddOnType3 = "customizable-profile $2/mo"
-    } else if (formData.addOn3.length > 0 && formData.billingType == "monthly") {
-      setAddOnType3 = "customizable-profile $20/yr"
+      setAddOnType3 = "customizable-profile $2/mo";
+    } else if (
+      formData.addOn3.length > 0 &&
+      formData.billingType == "monthly"
+    ) {
+      setAddOnType3 = "customizable-profile $20/yr";
     }
-  
+
     let setPaymentPlanAmount = "";
-    if (formData.planType == "arcade" && formData.billingType == "yearly" ) {
-      setPaymentPlanAmount = "$9/mo"
-    } else if (formData.planType == "arcade" && formData.billingType == "monthly" ) {
-      setPaymentPlanAmount = "$90/mo"
-    } else if (formData.planType == "advanced" && formData.billingType == "yearly" ) {
-      setPaymentPlanAmount = "$12/mo"
-    } else if (formData.planType == "advanced" && formData.billingType == "monthly" ) {
-      setPaymentPlanAmount = "$120/mo"
-    } else if (formData.planType == "pro" && formData.billingType == "yearly" ) {
-      setPaymentPlanAmount = "$15/mo"
-    } else if (formData.planType == "pro" && formData.billingType == "monthly" ) {
-      setPaymentPlanAmount = "$150/mo"
+    if (formData.planType == "arcade" && formData.billingType == "yearly") {
+      setPaymentPlanAmount = "$9/mo";
+    } else if (
+      formData.planType == "arcade" &&
+      formData.billingType == "monthly"
+    ) {
+      setPaymentPlanAmount = "$90/mo";
+    } else if (
+      formData.planType == "advanced" &&
+      formData.billingType == "yearly"
+    ) {
+      setPaymentPlanAmount = "$12/mo";
+    } else if (
+      formData.planType == "advanced" &&
+      formData.billingType == "monthly"
+    ) {
+      setPaymentPlanAmount = "$120/mo";
+    } else if (formData.planType == "pro" && formData.billingType == "yearly") {
+      setPaymentPlanAmount = "$15/mo";
+    } else if (
+      formData.planType == "pro" &&
+      formData.billingType == "monthly"
+    ) {
+      setPaymentPlanAmount = "$150/mo";
     }
-  
+
     setFormData({
       ...formData,
-      "billingType": setBillingType,
-      "addOn1": setAddOnType1,
-      "addOn2": setAddOnType2,
-      "addOn3": setAddOnType3,
-      "paymentPlan": setPaymentPlanAmount
-    }) 
-  }
-
+      billingType: setBillingType,
+      addOn1: setAddOnType1,
+      addOn2: setAddOnType2,
+      addOn3: setAddOnType3,
+      paymentPlan: setPaymentPlanAmount,
+    });
+  };
 
   const planType = formData.planType;
   const billType = formData.billingType == "monthly";
   const addOn1 = formData.addOn1;
   const addOn2 = formData.addOn2;
   const addOn3 = formData.addOn3;
-  const subTotal = formData.paymentPlan
+  const subTotal = formData.paymentPlan;
   const FirstLetterOfPlanToUppercase =
-    planType[0].toUpperCase() + planType.slice(1); 
-  const areThereAddOns = addOn1.length > 0 || addOn2.length > 0 || addOn3.length > 0
+    planType[0].toUpperCase() + planType.slice(1);
+  const areThereAddOns =
+    addOn1.length > 0 || addOn2.length > 0 || addOn3.length > 0;
 
-const total = 
+  const total =
     parseInt(subTotal.slice(1, subTotal.length - 3)) +
-    (formData.addOn1.length > 0 ? parseInt(formData.addOn1.split(" ")[1].split("/")[0].slice(1)) : 0) +
-    (formData.addOn2.length > 0 ? parseInt(formData.addOn2.split(" ")[1].split("/")[0].slice(1)) : 0) +
-    (formData.addOn3.length > 0 ? parseInt(formData.addOn3.split(" ")[1].split("/")[0].slice(1)) : 0); 
+    (formData.addOn1.length > 0
+      ? parseInt(formData.addOn1.split(" ")[1].split("/")[0].slice(1))
+      : 0) +
+    (formData.addOn2.length > 0
+      ? parseInt(formData.addOn2.split(" ")[1].split("/")[0].slice(1))
+      : 0) +
+    (formData.addOn3.length > 0
+      ? parseInt(formData.addOn3.split(" ")[1].split("/")[0].slice(1))
+      : 0);
 
   return (
     <div className="right-side-container">
@@ -94,11 +122,16 @@ const total =
           Double-check everything looks OK before confirming.
         </div>
         <div>
-          <div className={areThereAddOns ? "main-selection" : "main-selection-without-add-ons"}>
+          <div
+            className={
+              areThereAddOns
+                ? "main-selection"
+                : "main-selection-without-add-ons"
+            }
+          >
             <div className="main-selection-breakdown">
               <div className="finishing-up-plan-selection">
-                {FirstLetterOfPlanToUppercase}
-                {" "}({formData.billingType})
+                {FirstLetterOfPlanToUppercase} ({formData.billingType})
               </div>
               <div
                 className="finishing-up-change-plan-selection-button"
@@ -155,7 +188,7 @@ const total =
             <div></div>
           )}
           {areThereAddOns ? (
-          <div className="final-coloured-element"></div>
+            <div className="final-coloured-element"></div>
           ) : (
             <div></div>
           )}
@@ -169,13 +202,8 @@ const total =
           </div>
         </div>
       </div>
-      <div className="buttons-container">
-        <div className="go-back" onClick={handleGoBack}>
-          Go back
-        </div>
-        <button type="submit" className="confirm-button" onClick={pageChange}>
-          Confirm
-        </button>
+      <div className="button-desktop-view">
+        <Button />
       </div>
     </div>
   );
