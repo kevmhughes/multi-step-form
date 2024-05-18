@@ -577,7 +577,6 @@ input:checked + .slider:before {
   .buttons-container-page-one {
     display: flex;
     justify-content: flex-end;
-    position: absolute;
     bottom: 0;
     width: 100%;
     left: 0;
