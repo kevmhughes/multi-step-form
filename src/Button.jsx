@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { AppContext } from "./App";
 
 const Button = () => {
-  const { pageChange, page, handleGoBack } = useContext(AppContext);
+  const { pageChange, page, handleGoBack, handleSubmit } = useContext(AppContext);
 
   console.log("page:", page);
 
@@ -28,8 +28,14 @@ const Button = () => {
           </button>
         </div>
       );
-  } else if (page == 1 || page == 5) {
-    <></>
+  } else if (page == 1){
+    return (
+        <div className="buttons-container-page-one">
+        <button onClick={handleSubmit} className="next-step-button-page-one">
+          Next Step
+        </button>
+      </div>
+    )
   }
 };
 

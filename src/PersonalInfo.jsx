@@ -1,29 +1,30 @@
 import React, { useContext, useEffect } from "react";
 import { AppContext } from "./App";
+import Button from "./Button";
 
 const PersonalInfo = () => {
-  const { formData, handleChange, handleSubmit, handleBlur } = useContext(AppContext);
+  const { formData, handleChange, handleSubmit, handleBlur } =
+    useContext(AppContext);
 
- useEffect(() => {
-    // storing data to local 
+  useEffect(() => {
+    // storing data to local
     localStorage.setItem("storedData", JSON.stringify(formData));
   }, [formData]);
 
-
-
   return (
-  <div className="right-side-container-page-one">
+    <div className="right-side-container-page-one">
       <div>
-      <h1>Personal Info</h1>
-      <div className="subtitle">
-        Please provide your name, email address, and phone number.
-      </div>
+        <h1>Personal Info</h1>
+        <div className="subtitle">
+          Please provide your name, email address, and phone number.
+        </div>
       </div>
       <form onSubmit={handleSubmit} className="personal-info-form">
-
         <div className="error-message-and-label-container">
-        <label htmlFor="name" className="label-styling">Name</label>
-        <div className="error-message-name">This field is required</div>
+          <label htmlFor="name" className="label-styling">
+            Name
+          </label>
+          <div className="error-message-name">This field is required</div>
         </div>
         <input
           type="text"
@@ -36,8 +37,10 @@ const PersonalInfo = () => {
         />
 
         <div className="error-message-and-label-container">
-        <label htmlFor="email" className="label-styling">Email Address</label>
-        <div className="error-message-email">This field is required</div>
+          <label htmlFor="email" className="label-styling">
+            Email Address
+          </label>
+          <div className="error-message-email">This field is required</div>
         </div>
         <input
           type="text"
@@ -49,8 +52,10 @@ const PersonalInfo = () => {
           onBlur={handleBlur}
         />
         <div className="error-message-and-label-container">
-        <label htmlFor="phone" className="label-styling">Phone Number</label>
-        <div className="error-message-phone">This field is required</div>
+          <label htmlFor="phone" className="label-styling">
+            Phone Number
+          </label>
+          <div className="error-message-phone">This field is required</div>
         </div>
         <input
           type="text"
@@ -62,10 +67,12 @@ const PersonalInfo = () => {
           onBlur={handleBlur}
         />
         <div className="personal-info-button-container">
-          <button type="submit" className="next-step-button">Next Step</button>
+          <button type="submit" className="next-step-button">
+            Next Step
+          </button>
         </div>
       </form>
-    </div> 
+    </div>
   );
 };
 

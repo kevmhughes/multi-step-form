@@ -425,11 +425,13 @@ input[type="checkbox"]:checked {
   justify-content: center;
   align-items: center;
   margin: auto;
+  margin-top: 60px;
 }
 .confirmation-message {
   width: 422px;
   text-align: center;
   color: hsl(231, 11%, 63%);
+  line-height: 1.5rem;
 }
 
 /* Customized switch */
@@ -542,12 +544,59 @@ input:checked + .slider:before {
   .button-desktop-view {
     display: none;
   }
+  .buttons-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+  }
+  .go-back {
+    margin-left: 20px;
+  }
+  .next-step-button {
+    margin-right: 20px
+  }
+  .confirm-button {
+    margin-right: 20px
+  }
 
   /* PersonalInfo.Jsx */
 
   .right-side-container-page-one {
     margin-left: 0;
     width: auto;
+    margin-right: 20px;
+  }
+  .personal-info-button-container {
+    display: none;
+  }
+  .buttons-container-page-one {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+  }
+  .next-step-button-page-one {
+      height: 50px;
+      width: 120px;
+      border-radius: 10px;
+      border: 1px solid hsl(213, 96%, 18%);
+      background-color: hsl(213, 96%, 18%);
+      color: white;
+      font-family: "ubuntu-regular";
+      font-size: 16px;
+      cursor: pointer;
+      margin-right: 20px;
   }
 
   .personal-info-form {
@@ -594,9 +643,15 @@ input:checked + .slider:before {
   }
 
   /* Confirmation.Jsx */
-
+  .tick-icon {
+    height: 65px
+  }
+  .thank-you-message{
+    font-size: 1.75rem;
+  }
   .confirmation-message {
     width: 100%;
+    margin-bottom: 60px;
   }
   .final-right-side-container {
     gap: 20px;
