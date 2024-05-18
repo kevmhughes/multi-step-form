@@ -207,6 +207,7 @@ h1 {
   display: flex;
   gap: 20px;
 }
+
 .plan-selector {
   height: 140px;
   width: 90px;
@@ -511,7 +512,7 @@ input:checked + .slider:before {
     flex-direction: column;
     width: calc(100% - 40px);
     align-items: center;
-    gap: 50px;
+    gap: 1rem;
   }
   .right-side-container {
     width: 100%;
@@ -525,7 +526,7 @@ input:checked + .slider:before {
     align-items: center;
     width: calc(100% - 40px);
     margin: 20px;
-    height: 500px;
+    height: auto;
   }
   .left-side-image {
     display: none;
@@ -541,13 +542,6 @@ input:checked + .slider:before {
   .button-desktop-view {
     display: none;
   }
-
-  /* .step-number-text {
-  display: none
-}
-.sidebar-step-info {
-  display: none;
-} */
 
   /* PersonalInfo.Jsx */
 
@@ -569,14 +563,14 @@ input:checked + .slider:before {
   /* SelectPlan.Jsx */
 
   .plan-selected {
-    height: 40px;
+    height: auto;
     width: calc(100% - 40px);
     flex-direction: row;
     justify-content: flex-start;
     gap: 20px;
   }
   .plan-selector {
-    height: 40px;
+    height: auto;
     width: calc(100% - 40px);
     flex-direction: row;
     justify-content: flex-start;
@@ -584,6 +578,19 @@ input:checked + .slider:before {
   }
   .options-container {
     flex-direction: column;
+  }
+
+  /* AddOns.Jsx */
+
+  .add-on-service-type{    
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .add-on-service-description {
+    font-size: 12px;
+  }
+  .larger-storage-info, .online-service-info, .customizable-profile-info {
+    font-size: 14px;
   }
 
   /* Confirmation.Jsx */
