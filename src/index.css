@@ -607,7 +607,9 @@ input:checked + .slider:before {
   }
 
   /* SelectPlan.Jsx */
-
+  .subtitle {
+    margin-bottom: 20px;
+  }
   .plan-selected {
     height: auto;
     width: calc(100% - 40px);
