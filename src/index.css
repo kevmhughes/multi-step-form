@@ -546,9 +546,7 @@ input:checked + .slider:before {
     display: none;
   }
   .buttons-container {
-    bottom: 0;
     width: 100%;
-    left: 0;
     background-color: white;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -655,4 +653,9 @@ input:checked + .slider:before {
   .final-right-side-container {
     gap: 20px;
   }
+
+  /* SwitchComponent.Jsx */
+.switch-container {
+  margin-top: 25px;
+}
 }
