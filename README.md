@@ -2,12 +2,11 @@
 
 #### This is a milti-step form built with React and Vite
 
-Use the app [here](multi-step-form-two-rho.vercel.app)
+Use the app [here](https://multi-step-form-two-rho.vercel.app)
 
 # Description
 
-Flower Heads is a fully responsive and modern full stack app with all the functionality of an e-commerce app. The user can browse and filter through the products, add and remove products to and from the cart, review and modify the cart, and finally pay securely using the fully integrated Stripe payment processing interface. 
-
+See a full list of the features [here](https://github.com/kevmhughes/multi-step-form/blob/main/README.md#users-are-able-to)
  
 # Take a Look at the App
 
@@ -45,7 +44,7 @@ Flower Heads is a fully responsive and modern full stack app with all the functi
 * View the optimal layout for the interface depending on their device's screen size
 * See hover and focus states for all interactive elements on the page
 * Receive form validation messages if:
-A field has been missed
-The email address is not formatted correctly
-A step is submitted, but no selection has been made
+  * A field has been missed
+  * The email address is not formatted correctly
+  * A step is submitted, but no selection has been made
 * See their form data after the session has ended thanks to thier form data being stored in local storage
