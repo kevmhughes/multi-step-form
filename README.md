@@ -6,8 +6,7 @@ Use the app [here](https://multi-step-form-two-rho.vercel.app)
 
 # Description
 
-Flower Heads is a fully responsive and modern full stack app with all the functionality of an e-commerce app. The user can browse and filter through the products, add and remove products to and from the cart, review and modify the cart, and finally pay securely using the fully integrated Stripe payment processing interface. 
-
+See a full list of the features of this app [here(### Users are able to:)
  
 # Take a Look at the App
 
