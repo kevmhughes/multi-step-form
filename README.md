@@ -11,10 +11,14 @@ See a full list of the features [here](https://github.com/kevmhughes/multi-step-
 # Take a Look at the App
 
 ## Desktop:
+
 #### Select a plan
 <img src="readme-images/desktop1.png" />
 
 ## Mobile:
+
+#### Form validation
+<img src="readme-images/desktop2.png" />
 
 #### Select a plan
 <kbd>
