@@ -2,7 +2,7 @@
 
 #### This is a milti-step form built with React and Vite
 
-Use the app [here]([https://multi-step-form-two-rho.vercel.app])
+Use the app [here](https://multi-step-form-two-rho.vercel.app)
 
 # Description
 
