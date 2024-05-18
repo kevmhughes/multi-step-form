@@ -656,6 +656,6 @@ input:checked + .slider:before {
 
   /* SwitchComponent.Jsx */
 .switch-container {
-  margin-top: 25px;
+  margin-top: 20px;
 }
 }
