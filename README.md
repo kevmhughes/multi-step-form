@@ -45,7 +45,7 @@ Flower Heads is a fully responsive and modern full stack app with all the functi
 * View the optimal layout for the interface depending on their device's screen size
 * See hover and focus states for all interactive elements on the page
 * Receive form validation messages if:
-- A field has been missed
-- The email address is not formatted correctly
-- A step is submitted, but no selection has been made
+  * A field has been missed
+  * The email address is not formatted correctly
+  * A step is submitted, but no selection has been made
 * See their form data after the session has ended thanks to thier form data being stored in local storage
