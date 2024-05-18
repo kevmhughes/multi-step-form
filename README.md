@@ -2,13 +2,13 @@
 
 #### This is a milti-step form built with React and Vite
 
+Use the app [here](https://multi-step-form-two-rho.vercel.app)
+
 # Description
 
 See a full list of the features [here](https://github.com/kevmhughes/multi-step-form/blob/main/README.md#users-are-able-to)
  
 # Take a Look at the App
-
-Use the app [here](https://multi-step-form-two-rho.vercel.app)
 
 ## Desktop:
 #### Select a plan
