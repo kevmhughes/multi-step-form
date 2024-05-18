@@ -6,7 +6,7 @@ Use the app [here](https://multi-step-form-two-rho.vercel.app)
 
 # Description
 
-See a full list of the features of this app [here(### Users are able to:)
+See a full list of the features of this app [here]((https://github.com/kevmhughes/multi-step-form/blob/main/README.md#users-are-able-to))
  
 # Take a Look at the App
 
