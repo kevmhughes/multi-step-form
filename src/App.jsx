@@ -1,5 +1,4 @@
 /* eslint-disable no-useless-escape */
-import "./App.css";
 import SideBar from "./SideBar";
 import SideBarMobile from "./SideBarMobile";
 import PersonalInfo from "./PersonalInfo";
